@@ -12,6 +12,18 @@ const users = [
 // router.get("/", (req, res: Response) =>{
 //     res.json(users)
 // });
+
+/**
+ * @swagger
+ * /api/users:
+ *   get:
+ *     summary: Récupérer tous les utilisateurs
+ *     tags: [Users]
+
+ *     responses:
+ *       200:
+ *         description: Succès
+ */
 router.get("/", userController.getAllUsers);
 
 export default router;

@@ -1,4 +1,3 @@
-import userRoutes from "./routes/userRoutes";
 
 import express  from "express";
 
@@ -10,6 +9,11 @@ import User from "./models/User";
 
 import { requestLogger } from "./middlewares/logger";
 import { errorHandler } from "./middlewares/errorHandler";
+
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "./config/swagger";
+
+import userRoutes from "./routes/userRoutes";
 
 const showUsers = async () => {
     const users = await User.findAll();
@@ -45,6 +49,8 @@ const etudiants = [
 
 const app = express();
 const port = 3000;
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(requestLogger);
 
