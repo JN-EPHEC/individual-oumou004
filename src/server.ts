@@ -9,6 +9,8 @@ import "./models/User"; // IMPORTANT : pour enregistrer le modèle
 import User from "./models/User";
 
 import { requestLogger } from "./middlewares/logger";
+import { errorHandler } from "./middlewares/errorHandler";
+
 const showUsers = async () => {
     const users = await User.findAll();
     console.log(users);
@@ -68,6 +70,8 @@ app.get("/api/hello/:name", (req, res) =>{
 app.use(express.static("public"));
 
 app.use("/api/users", userRoutes);
+
+app.use(errorHandler);
 
 sequelize.authenticate()
     .then(() => {
