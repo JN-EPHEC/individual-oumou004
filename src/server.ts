@@ -1,3 +1,4 @@
+import cors from "cors";
 
 import express  from "express";
 
@@ -72,6 +73,8 @@ app.get("/api/hello/:name", (req, res) =>{
 
     res.json(reponse)
 });
+
+app.use(cors());
 
 app.use(express.static("public"));
 
