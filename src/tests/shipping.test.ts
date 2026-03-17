@@ -27,3 +27,18 @@ describe("Shipping Calculator - Tests Fonctionnels", () => {
   );
 
 });
+
+it("devrait lever une erreur si la distance est négative", () => {
+  expect(() => calculateShipping(-10, 5, "standard"))
+    .toThrow("Distance invalide");
+});
+
+it("devrait lever une erreur si le poids est <= 0", () => {
+  expect(() => calculateShipping(10, 0, "standard"))
+    .toThrow("Poids invalide");
+});
+
+it("devrait lever une erreur si le poids est > 50", () => {
+  expect(() => calculateShipping(10, 60, "standard"))
+    .toThrow("Poids invalide");
+});
