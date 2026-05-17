@@ -14,9 +14,9 @@ jobs:
           node-version: '18.x'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
         working-directory: ./server
 
       - name: Run unit tests
-        run: npx jest
+        run: ./node_modules/.bin/jest
         working-directory: ./server
