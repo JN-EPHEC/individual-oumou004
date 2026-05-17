@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import User from "../models/User";
 
 export const getAllUsers = async (req: Request, res: Response) => {
@@ -11,8 +11,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
 };
 
 export const getUserById = async (req: Request, res: Response) => {
-  const user = await User.findByPk(req.params.id);
-  res.json(user);
+  const user = await User.findByPk(Number(req.params.id)); res.json(user);
 };
 
 export const createUser = async (req: Request, res: Response) => {

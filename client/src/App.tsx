@@ -1,3 +1,40 @@
+import { useEffect, useState } from "react";
+
+interface User {
+  id: number;
+  nom: string;
+  prenom: string;
+}
+
+function App() {
+  const [users, setUsers] = useState<User[]>([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/users`)
+      .then((res) => res.json())
+      .then((data) => setUsers(data))
+      .catch((err) => console.error(err));
+  }, []);
+
+  return (
+    <div>
+      <h1>Liste des utilisateurs</h1>
+
+      {users.map((user) => (
+        <div key={user.id}>
+          {user.nom} {user.prenom}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
@@ -120,38 +157,3 @@
 
 // export default App
 
-import { useEffect, useState } from "react";
-
-// Typage TypeScript
-interface User {
-  id: number;
-  nom: string;
-  prenom: string;
-}
-
-function App() {
-  const [users, setUsers] = useState<User[]>([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/api/users")
-      .then((res) => res.json())
-      .then((data) => setUsers(data))
-      .catch((err) => console.error(err));
-  }, []);
-
-  return (
-    <div>
-      <h1>Liste des utilisateurs</h1>
-
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            {user.nom} {user.prenom}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-export default App;

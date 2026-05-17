@@ -1,4 +1,7 @@
-import { User } from "../models/users";
+type User = {
+    id: number;
+    name: string;
+};
 
 let users: User[] = [];
 let idCounter = 1;
@@ -8,7 +11,12 @@ export const findAll = (): User[] => {
 };
 
 export const create = (name: string): User => {
-    const newUser: User = { id: idCounter++, name };
+    const newUser: User = {
+        id: idCounter++,
+        name
+    };
+
     users.push(newUser);
+
     return newUser;
 };
