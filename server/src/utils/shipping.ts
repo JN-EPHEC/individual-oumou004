@@ -5,11 +5,11 @@ export function calculateShipping(
 ): number {
 
   if (distance < 0) {
-    throw new Error("Invalid distance");
+    throw new Error("Distance invalide");
   }
 
   if (weight <= 0 || weight > 50) {
-    throw new Error("Invalid weight");
+    throw new Error("Poids invalide");
   }
 
   let baseCost = 0;
