@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true
+  },
+  
+  "development": {
+    "username": "postgres.aligkjtvzauuzqidkuyn",
+    "password": "Massoudou@1234",
+    "database": "postgres",
+    "host": "aws-0-eu-west-1.pooler.supabase.com",
+    "port": 6543,
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+
+  "test": {
+    "username": "postgres.aligkjtvzauuzqidkuyn",
+    "password": "Massoudou@1234",
+    "database": "postgres",
+    "host": "aws-0-eu-west-1.pooler.supabase.com",
+    "port": 6543,
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+
+  "production": {
+    "username": "postgres.aligkjtvzauuzqidkuyn",
+    "password": "Massoudou@1234",
+    "database": "postgres",
+    "host": "aws-0-eu-west-1.pooler.supabase.com",
+    "port": 6543,
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}

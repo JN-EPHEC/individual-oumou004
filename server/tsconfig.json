@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    "module": "CommonJS",
+    "moduleResolution": "node",
+
+    "target": "ES2020",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    "types": ["jest"],
+
+    "skipLibCheck": true,
+
+    "sourceMap": true,
+
+    "verbatimModuleSyntax": false
+  },
+
+  "include": ["src"]
+}
