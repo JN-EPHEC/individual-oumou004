@@ -18,6 +18,7 @@ function App() {
 
   return (
     <div>
+      <h1>ProjetHub CI/CD</h1>
       <h1>Liste des utilisateurs</h1>
 
       {users.map((user) => (
